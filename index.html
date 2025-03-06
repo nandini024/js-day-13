@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+    width: 100%; /* ✅ Ensures image fits container width */
+   
+    object-fit: cover; /* ✅ Ensures it scales properly */
+}
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        
+        
+            position: fixed;
+            width: 100%;
+            background:white;
+            color:black ;
+            padding: 15px;
+            z-index: 1000;
+    
+}
+        nav{
+            display: flex;
+            justify-content:space-between ;
+            gap:10%
+        }
+        .container2 { /* Changed from .container3 to .container2 */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Exactly 4 images per row */
+            gap: 10px;
+            margin-top: 5%;
+            width: 100%;
+        }
+        .container2 img {
+            width: 100%; /* Ensures each image fits the grid cell */
+            height: auto;
+            border-radius: 4px;
+        }
+        .container4{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Exactly 4 images per row */
+            gap: 10px;
+            margin-top: 5%;
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var maincontainer=document.createElement("div");
+        var container=document.createElement("div");
+        container.classList.add("container");
+        var title=document.createElement("h3")
+        title.innerHTML="<b>BR Architects</b>"
+        var nav=document.createElement("nav")
+        nav.innerHTML=`<p>Projects</p><p>About</p><p>Contact</p>`
+        container.append(title)
+        container.append(nav)
+      
+        container1=document.createElement("div")
+        var img=document.createElement("img")
+        img.src="https://www.w3schools.com/w3images/architect.jpg"
+        container1.append(img)
+        // maincontainer.append(img) 
+        // var project=document.createElement("div")
+        // var pro=document.createElement("h1")
+        var project=document.createElement("div")
+    var par=document.createElement("p")
+   par.innerHTML="<B>PROJECTS</B>"
+    project.append(par)
+      
+        
+
+      
+        var container2=document.createElement("div");
+       
+       var housenames=["summer House","Brick House","Renoivated","Barn House","summer House","Brick House","Renoivated","Barn House"]
+        container2.classList.add("container2");
+                var imageUrls = [
+            "https://www.w3schools.com/w3images/house5.jpg",
+            "https://www.w3schools.com/w3images/house2.jpg",
+            "https://www.w3schools.com/w3images/house3.jpg",
+            "https://www.w3schools.com/w3images/house4.jpg",
+            "https://www.w3schools.com/w3images/house2.jpg",
+            "https://www.w3schools.com/w3images/house5.jpg",
+            "https://www.w3schools.com/w3images/house4.jpg",
+            "https://www.w3schools.com/w3images/house3.jpg"
+            ];
+
+         
+        for (let i = 0; i <=7; i++) {
+            var child=document.createElement("div")
+        var img = document.createElement("img");
+        var h3=document.createElement("h3")
+// //    
+child.append(img,h3)
+img.src=imageUrls[i]
+    h3.innerText=housenames[i]
+    container2.appendChild(child);
+  
+//    
+    
+}
+var container3=document.createElement("div")
+var about=document.createElement("p")
+about.innerHTML=`<b>About</b><p>Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>`
+       container3.append(about)
+    //    maincontainer.append(container3)
+
+
+    //    Container 4
+         
+        //  maincontainer.append(container3)
+    var container4=document.createElement("div")
+    container4.classList.add("container4");
+    images=["https://www.w3schools.com/w3images/team2.jpg","https://www.w3schools.com/w3images/team1.jpg","https://www.w3schools.com/w3images/team3.jpg","https://www.w3schools.com/w3images/team4.jpg"]
+    var headings=["John Doe","Jane Doe","Mike Ross","Dan Star"]
+    var role=["CEO & Founder","Architect","Architect","Architect"]
+    for(let i=0;i<=3;i++){
+        var child1=document.createElement("div")
+    var img = document.createElement("img");
+    var h4=document.createElement("h4")
+
+    var p=document.createElement("p")
+    var p1=document.createElement("p")
+    img.src=images[i]
+     h4.innerText=headings[i]
+      p1.innerHTML=role[i]
+    p.innerHTML="<p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>"
+    child1.append(img,h4,p,p1)
+    container4.appendChild(child1);
+
+    }
+    var container5=document.createElement("div")
+    var lastimg=document.createElement("img")
+    lastimg.src="https://www.w3schools.com/w3images/map.jpg"
+    container5.append(lastimg)
+
+    
+var footer = document.createElement("div");
+footer.innerText = "Developed by Nandhini"; 
+
+
+footer.style.backgroundColor = "black"; 
+footer.style.color = "white"; //
+footer.style.textAlign = "center"; 
+footer.style.padding = "10px";
+footer.style.marginTop = "20px"; 
+footer.style.fontSize = "18px"; 
+
+
+
+    
+    maincontainer.appendChild(container);
+maincontainer.appendChild(container1); 
+maincontainer.appendChild(project);
+maincontainer.appendChild(container2); 
+maincontainer.appendChild(container3); 
+maincontainer.appendChild(container4);
+maincontainer.appendChild(container5); 
+maincontainer.appendChild(footer);
+
+        document.body.appendChild(maincontainer)
+    </script>
+</body>
+</html>
